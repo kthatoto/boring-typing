@@ -26,6 +26,7 @@ p {
   height: 100%;
   position: relative;
   background-color: #eee;
+  overflow: hidden;
 }
 .inner_frame * {
   position: absolute;
