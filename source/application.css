@@ -27,6 +27,11 @@ div, p{
   vertical-align: middle;
   font-size: 32px;
 }
+.score_label {
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+}
 
 #title_label {
   font-size: 50px;
@@ -55,6 +60,19 @@ div, p{
 }
 #point_result {
   top: 220px;
+}
+
+#best_scores_list {
+  top: 65%;
+  width: 120px;
+  margin: 0 auto;
+  height: 150px;
+  position: relative;
+}
+.score_label {
+  position: static !important;
+  height: 50px;
+  text-align: left;
 }
 
 #chara_row {

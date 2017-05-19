@@ -39,6 +39,16 @@ function timer_start(){
 function game_over(){
   document.onkeydown = function(){};
   $("#playing_screen").hide();
+  if(0 < point){
+    best_scores.push(point);
+    best_scores.sort(function(a,b){
+      if( a > b ) return -1;
+      if( a < b ) return 1;
+      return 0;
+    });
+    best_scores = best_scores.slice(0, 3);
+    console.log(best_scores);
+  }
   result_screen();
 }
 

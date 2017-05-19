@@ -1,5 +1,6 @@
 
 var point;
+var best_scores = [];
 
 $(function(){
   kongregateAPI.loadAPI(function(){
@@ -29,6 +30,9 @@ function initialize(){
   });
 }
 function top_screen(){
+  best_scores.forEach(function(score, i){
+    $(".score_label").eq(i).text((i+1)+". "+score);
+  });
   $("#top_screen").show();
 }
 function game_screen(){
