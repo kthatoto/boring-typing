@@ -7,14 +7,29 @@
   <script src='./source/jquery-3.2.1.min.js'></script>
   <script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
   <script src="./source/application.js"></script>
+  <script src="./source/game.js"></script>
 </head>
 <body>
-  <div class="outer_frame">
-    <div class="inner_frame">
+  <div id="outer_frame">
+    <div id="inner_frame">
 
-      <div class="point_display">0</div>
+      <div id="top_screen" class="full_screen">
+        <p id="title_label" class="label">Boring Typing</p>
+        <p id="play_btn" class="center_btn">play</p>
+      </div>
 
-      <p class="chara_row"></p>
+      <div id="playing_screen" class="full_screen">
+        <p id="rest_timer" class="label">30.0</p>
+        <p id="chara_row"></p>
+        <p id="point_display" class="label">0</p>
+      </div>
+
+      <div id="result_screen" class="full_screen">
+        <p id="game_over_label" class="label">game over</p>
+        <p id="point_result" class="label"></p>
+        <p id="play_again_btn" class="center_btn">play again</p>
+        <p id="return_top_btn" class="center_btn">return top</p>
+      </div>
 
     </div>
   </div>

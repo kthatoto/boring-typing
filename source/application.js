@@ -1,3 +1,6 @@
+
+var point;
+
 $(function(){
   kongregateAPI.loadAPI(function(){
     window.kongregate = kongregateAPI.getAPI();
@@ -5,27 +8,38 @@ $(function(){
     //   alert("ok");
     // }
   });
-  var point = 0;
-  initilize_text();
-  document.onkeydown = function (e){
-    var target_text  = $(".chara_row").text();
-    var target_chara = target_text.charAt(0);
-    var input_chara  = String.fromCharCode(e.keyCode).toLowerCase();
-    if (input_chara == target_chara){
-      $(".chara_row").text(target_text.substr(1) + get_random_alphabet());
-      point++;
-      $(".point_display").text(point);
-    }
-  };
+  initialize();
 });
 
-function get_random_alphabet() {
-  return String.fromCharCode(parseInt(Math.random() * 26 + 65)).toLowerCase();
+function initialize(){
+  top_screen();
+  $("#playing_screen").hide();
+  $("#result_screen").hide();
+  $("#play_btn").on("click", function(){
+    $("#top_screen").hide();
+    game_screen();
+  });
+  $("#play_again_btn").on("click", function(){
+    $("#result_screen").hide();
+    game_screen();
+  });
+  $("#return_top_btn").on("click", function(){
+    $("#result_screen").hide();
+    top_screen();
+  });
 }
-function initilize_text(){
-  var init_text = "";
-  for(var i = 0; i<19; i++){
-    init_text += get_random_alphabet();
-  }
-  $(".chara_row").text(init_text);
+function top_screen(){
+  $("#top_screen").show();
+}
+function game_screen(){
+  $("#playing_screen").show();
+  point = 0;
+  $("#point_display").text(point);
+  initilize_text();
+  key_check();
+  timer_start();
+}
+function result_screen(){
+  $("#point_result").text(point);
+  $("#result_screen").show();
 }
